@@ -35,25 +35,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Asignamos la función para borrar el último carácter ingresado al dar click en el botón Del
+        // Asignamos la función para borrar el último carácter del textView al dar click en el botón Del
         findViewById<Button>(R.id.btn_del).setOnClickListener {
-            deleteCharacter()
+            deleteChar()
         }
 
-        // Ejecutamos la  funcion de calcular resultado al dar click en el boton =
+        // Ejecutamos la funcion de calcular resultado al dar click en el boton =
         findViewById<Button>(R.id.btn_result).setOnClickListener {
             calculateResult()
         }
     }
 
     // Función para borrar el último carácter ingresado
-    private fun deleteCharacter() {
+    private fun deleteChar() {
         val text = resultTextView.text.toString()
         if (text.isNotEmpty()) {
             // Eliminamos el último carácter usando substring
-            val auxText = text.substring(0, text.length - 1)
-            // Actualizamos el texto en el TextView
-            resultTextView.text = auxText
+            val newText = text.substring(0, text.length - 1)
+            // Actualizamos el TextView
+            resultTextView.text = newText
         }
     }
 
